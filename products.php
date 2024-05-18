@@ -46,7 +46,7 @@ include 'includes/sidebar.php';
            <div class="col-12">
               <div class="card top-selling overflow-auto">
 
-                <div class="filter">
+              <div class="filter">
                   <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                     <li class="dropdown-header text-start">
@@ -77,6 +77,14 @@ include 'includes/sidebar.php';
 
                       </tr>
                     </thead>
+
+                    <div class="search-container" style="display: flex; justify-content: flex-end;">
+        
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                    <br>
+
                     <tbody>
                       <tr>
                         <th scope="row"><a href="#"><img src="assets/img/milo.jpg" alt=""></a></th>
@@ -145,6 +153,31 @@ include 'includes/sidebar.php';
               </div>
             </div>
             <!-- End Top Selling -->
+
+            <div class="card" >
+                <br>
+            <div class="card-body" style="display: flex; justify-content: flex-end;">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- End Pagination with icons -->
+
+            </div>
+          </div>
     </section>
 
   </main><!-- End #main -->
