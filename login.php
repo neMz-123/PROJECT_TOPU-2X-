@@ -26,16 +26,28 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* Custom form control */
+    .custom-form-control {
+      display: block;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .custom-form-control-error {
+      display: block;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ff6347;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+  </style>
 </head>
 
 <body>
@@ -47,37 +59,28 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NiceAdmin</span>
-                </a>
-              </div><!-- End Logo -->
-
               <div class="card mb-3">
 
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" id="loginform" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" class="form-control" id="username" name="username" required>
                         <div class="invalid-feedback">Please enter your username.</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="password" required>
                       <div class="invalid-feedback">Please enter your password!</div>
                     </div>
 
@@ -93,18 +96,14 @@
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
                     </div>
+                    <div id="message" class="row text-danger text-center m-t-5 "></div>
+
                   </form>
 
                 </div>
               </div>
 
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
+
 
             </div>
           </div>
@@ -129,6 +128,56 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Include jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <script>
+    $(document).ready(function() {
+      // Intercept the form submission
+      $("#loginform").submit(function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+
+        // Create a FormData object
+        var formData = new FormData(this);
+
+        // Send an AJAX request
+        $.ajax({
+          type: "POST",
+          url: "php/login.php",
+          data: formData,
+          processData: false, // Do not process the data, leave it as FormData
+          contentType: false, // Do not set content type (let the browser set it)
+
+          success: function(response) {
+            console.log(response);
+            if (response.trim() === 'success') {
+              // Redirect or perform other actions
+              window.location.href = "/layout/vertical/index.php";
+            } else {
+              // Display an error message or handle other cases
+              $("#message").text("Login failed. Please check your credentials.");
+              $("#password, #username, #view_password").removeClass("custom-form-control").addClass("custom-form-control-error");
+            }
+          },
+          error: function() {
+            $("#message").text("An error occurred.");
+
+
+          }
+        });
+      });
+
+      //ON CLICK EFFECTS
+      $("#password, #username").click(function() {
+        $("#password, #username, #view_password").removeClass("custom-form-control-error").addClass("custom-form-control");
+      });
+    });
+  </script>
+
 
 </body>
 

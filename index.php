@@ -3,16 +3,20 @@
 
 
 <?php
+if (empty($_SESSION['user_id'])) {
+  header('Location: login.php');
+}
 include 'includes/head.php';
+include 'php/db_init.php'
 ?>
 
 
 <body>
 
-<?php
-include 'includes/header.php';
-include 'includes/sidebar.php';
-?>
+  <?php
+  include 'includes/header.php';
+  include 'includes/sidebar.php';
+  ?>
 
 
 
@@ -682,6 +686,8 @@ include 'includes/sidebar.php';
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
 </body>
 
