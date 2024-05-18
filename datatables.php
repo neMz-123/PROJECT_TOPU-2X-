@@ -26,14 +26,11 @@ include 'includes/sidebar.php';
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
+    </div>
+    <!-- End Page Title -->
 
     <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
+     
 
 
             <!-- Recent Sales -->
@@ -108,27 +105,8 @@ include 'includes/sidebar.php';
                 </div>
 
               </div>
-            </div><!-- End Recent Sales -->
-
-            
-
-           
-          
-
-           
-
-          </div>
-        </div><!-- End Left side columns -->
-
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-
-         
-          
-
-          
-
-      </div>
+            </div>
+            <!-- End Recent Sales -->
     </section>
 
   </main><!-- End #main -->

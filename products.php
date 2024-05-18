@@ -15,7 +15,6 @@ include 'includes/sidebar.php';
 ?>
 
 
-
   <main id="main" class="main">
 
     <div class="pagetitle">
@@ -29,12 +28,6 @@ include 'includes/sidebar.php';
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
-
 
            <!-- Top Selling -->
            <div class="col-12">
@@ -108,27 +101,8 @@ include 'includes/sidebar.php';
                 </div>
 
               </div>
-            </div><!-- End Top Selling -->
-
-            
-
-           
-          
-
-           
-
-          </div>
-        </div><!-- End Left side columns -->
-
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-
-         
-          
-
-          
-
-      </div>
+            </div>
+            <!-- End Top Selling -->
     </section>
 
   </main><!-- End #main -->
