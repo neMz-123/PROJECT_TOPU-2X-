@@ -13,6 +13,18 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
+        <a class="nav-link " href="products.php">
+          <i class="bi bi-grid"></i>
+          <span>Products</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+
+
+
+
+
+      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
