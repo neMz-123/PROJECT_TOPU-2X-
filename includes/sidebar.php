@@ -19,6 +19,13 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link " href="datatables.php">
+          <i class="bi bi-grid"></i>
+          <span>DataTables</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
 
 
 

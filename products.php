@@ -3,9 +3,11 @@
 
 <?php
 include 'includes/head.php';
+include 'includes/sidebar.php';
 include 'includes/header.php';
-?>
 
+
+?>
 <body>
 
  <!-- Top Selling -->
