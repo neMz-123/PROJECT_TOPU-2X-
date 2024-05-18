@@ -61,39 +61,39 @@ include 'includes/sidebar.php';
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
+                        <th scope="row"><a href="#"><img src="assets/img/milo.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">MILO</a></td>
+                        <td> ₱ 150.00</td>
                         <td class="fw-bold">124</td>
-                        <td>$5,828</td>
+                        <td>₱ 30.00</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
+                        <th scope="row"><a href="#"><img src="assets/img/bearbrand.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">BEAR BRAND SWAK</a></td>
+                        <td> ₱ 20.00</td>
                         <td class="fw-bold">98</td>
-                        <td>$4,508</td>
+                        <td>₱ 5.00</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
+                        <th scope="row"><a href="#"><img src="assets/img/yakult.png" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">YAKULT</a></td>
+                        <td>₱ 16.00</td>
                         <td class="fw-bold">74</td>
-                        <td>$4,366</td>
+                        <td>₱ 5.00</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
+                        <th scope="row"><a href="#"><img src="assets/img/nestea.png" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">NESTEA</a></td>
+                        <td>₱ 45.00</td>
                         <td class="fw-bold">63</td>
-                        <td>$2,016</td>
+                        <td>₱ 5.00</td>
                       </tr>
                       <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
+                        <th scope="row"><a href="#"><img src="assets/img/waffel.png" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">WAFFEL HOUSE</a></td>
+                        <td>₱ 55.00</td>
                         <td class="fw-bold">41</td>
-                        <td>$3,239</td>
+                        <td>₱ 5.00</td>
                       </tr>
                     </tbody>
                   </table>
