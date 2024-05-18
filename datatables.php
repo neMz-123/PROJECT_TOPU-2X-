@@ -23,7 +23,7 @@ include 'includes/sidebar.php';
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">DataTables</li>
         </ol>
       </nav>
     </div>
