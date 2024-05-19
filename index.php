@@ -3,10 +3,10 @@
 
 
 <?php
-session_start();
-if (empty($_SESSION['user_id'])) {
-  header('Location: login.php');
-}
+// session_start();
+// if (empty($_SESSION['user_id'])) {
+//   header('Location: login.php');
+// }
 include 'includes/head.php';
 include 'php/db_init.php'
 ?>
