@@ -135,6 +135,8 @@
 
   <script>
     $(document).ready(function() {
+      console.log("jQuery version: " + $.fn.jquery);
+
       // Intercept the form submission
       $("#loginform").submit(function(event) {
         // Prevent the default form submission
@@ -156,7 +158,7 @@
             console.log(response);
             if (response.trim() === 'success') {
               // Redirect or perform other actions
-              window.location.href = "/layout/vertical/index.php";
+              window.location.href = "index.php";
             } else {
               // Display an error message or handle other cases
               $("#message").text("Login failed. Please check your credentials.");
