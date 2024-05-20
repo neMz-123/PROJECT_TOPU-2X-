@@ -25,6 +25,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -33,4 +35,34 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    #imagePreview,
+    #editImagePreview {
+      width: 100%;
+      height: 200px;
+      border: 2px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #ccc;
+      background-size: contain;
+      background-position: center;
+      margin-bottom: 1rem;
+    }
+
+    .modal-body {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .form-container {
+      flex: 1;
+    }
+
+    .image-container {
+      flex: 1;
+    }
+  </style>
 </head>

@@ -4,6 +4,8 @@
 
 <?php
 include 'includes/head.php';
+include 'php/db_init.php';
+
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -33,7 +35,7 @@ include 'includes/head.php';
 
 
     <div class="button-row" style="display: flex; justify-content: flex-end;">
-      <button class="btn btn-primary" id="add_employee_button" name="add_employee_button"><i class="fa fa-plus" ></i> Add Product</button>
+      <button class="btn btn-primary" id="add_employee_button" name="add_employee_button"><i class="fa fa-plus"></i> Add Product</button>
 
     </div>
 
@@ -70,7 +72,7 @@ include 'includes/head.php';
                 <tr>
                   <th scope="col">Preview</th>
                   <th scope="col">Product</th>
-                  <th scope="col">Product ID</th>
+                  <th scope="col">Supplier</th>
                   <th scope="col">Product Description</th>
                   <th scope="col">Price</th>
                   <th scope="col">Actions</th>
@@ -79,75 +81,18 @@ include 'includes/head.php';
               </thead>
 
               <div class="search-container" style="display: flex; justify-content: flex-end;">
-
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </div>
               <br>
 
               <tbody>
-                <tr>
-                  <th scope="row"><a href="#"><img src="assets/img/milo.jpg" alt=""></a></th>
-                  <td><a href="#" class="text-primary fw-bold">MILO</a></td>
-                  <td> ₱ 150.00</td>
-                  <td class="fw-bold">qwwereytruytiuuyiouoiuoi</td>
-                  <td>₱ 30.00</td>
-                  <td>
-                    <img src="assets/img/edit.png" alt="Edit" title="Edit" style="height:25px; width:25px;">
-                    <img src="assets/img/delete.png" alt="Delete" title="Delete" style="height:25px; width:25px;">
-                  </td>
 
-                </tr>
-                <tr>
-                  <th scope="row"><a href="#"><img src="assets/img/bearbrand.jpg" alt=""></a></th>
-                  <td><a href="#" class="text-primary fw-bold">BEAR BRAND SWAK</a></td>
-                  <td> ₱ 20.00</td>
-                  <td class="fw-bold">98</td>
-                  <td>₱ 5.00</td>
-                  <td>
-                    <img src="assets/img/edit.png" alt="Edit" title="Edit" style="height:25px; width:25px;">
-                    <img src="assets/img/delete.png" alt="Delete" title="Delete" style="height:25px; width:25px;">
-                  </td>
-
-
-                </tr>
-                <tr>
-                  <th scope="row"><a href="#"><img src="assets/img/yakult.png" alt=""></a></th>
-                  <td><a href="#" class="text-primary fw-bold">YAKULT</a></td>
-                  <td>₱ 16.00</td>
-                  <td class="fw-bold">74</td>
-                  <td>₱ 5.00</td>
-                  <td>
-                    <img src="assets/img/edit.png" alt="Edit" title="Edit" style="height:25px; width:25px;">
-                    <img src="assets/img/delete.png" alt="Delete" title="Delete" style="height:25px; width:25px;">
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row"><a href="#"><img src="assets/img/nestea.png" alt=""></a></th>
-                  <td><a href="#" class="text-primary fw-bold">NESTEA</a></td>
-                  <td>₱ 45.00</td>
-                  <td class="fw-bold">63</td>
-                  <td>₱ 5.00</td>
-                  <td>
-                    <img src="assets/img/edit.png" alt="Edit" title="Edit" style="height:25px; width:25px;">
-                    <img src="assets/img/delete.png" alt="Delete" title="Delete" style="height:25px; width:25px;">
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row"><a href="#"><img src="assets/img/waffel.png" alt=""></a></th>
-                  <td><a href="#" class="text-primary fw-bold">WAFFEL HAUS</a></td>
-                  <td>₱ 55.00</td>
-                  <td class="fw-bold">41</td>
-                  <td>₱ 5.00</td>
-                  <td>
-                    <img src="assets/img/edit.png" alt="Edit" title="Edit" style="height:25px; width:25px;">
-                    <img src="assets/img/delete.png" alt="Delete" title="Delete" style="height:25px; width:25px;">
-                  </td>
-                </tr>
               </tbody>
             </table>
 
           </div>
+
 
 
         </div>
@@ -180,104 +125,11 @@ include 'includes/head.php';
       </div>
     </section>
 
-       <!-- Add Employee Modal -->
-<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel" aria-hidden="true" data-backdrop="static">
-  <div class="modal-dialog modal-xl" role="document">
-    <div class="modal-content square-modal">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      
-      <div class="modal-body">
-      <h4 class="text-primary">Personal Information</h4>
-        <form id="addEmployeeForm" class="row" enctype="multipart/form-data" method="POST">
-        
-          <!-- Personal Information Section -->
-          <div class="col-md-12">
-           
-            <div class="row">
-              <!-- Image Section -->
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="image">Image / ID</label>
-                  <!-- <div class="image-container">
-                    <img src="" class="img-fluid" alt="" id="previewImage">
-                  </div> -->
-                  <input class="form-control" type="file" name="image" id="image" accept=".jpg, .jpeg, .png" />
-                </div>
-              </div>
-              <!-- Other Personal Information -->
-              <div class="col-md-9">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="age">Age</label>
-                      <input type="number" class="form-control" id="age" name="age" required>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="start_date">Start Date</label>
-                      <input type="date" class="form-control" id="start_date" name="start_date" required>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <label for="salary">Salary</label>
-                      <input type="text" class="form-control" id="salary" name="salary" required>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-         
-          <!-- Contact Information Section -->
-          <div class="col-md-12">
-            <br>
-            <h4 class="text-primary">Contact Information</h4>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="contact">Contact</label>
-                  <input type="tel" class="form-control" id="contact" name="contact" required>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          
-          <!-- Buttons Section -->
-          
-        </form>
-      </div>
-
-      <div class="col-md-12">
-            <div class="row justify-content-center">
-              <div class="col-md-3 mb-2 mb-md-0">
-                <button type="submit" class="btn btn-primary btn-block">Add</button>
-              </div>
-              <div class="col-md-3 mb-2 mb-md-0">
-                <button type="button" class="btn btn-secondary btn-block" id="clearForm">Clear</button>
-              </div>
-              <div class="col-md-3">
-                <button type="button" class="btn btn-danger btn-block" id="cancelBtn">Cancel</button>
-              </div>
-            </div>
-          </div>
-          <br>
-    </div>
-  </div>
-</div>
+    <?php
+    include 'includes/footer.php';
+    include 'includes/modals/add_product.php';
+    include 'includes/modals/edit_product.php';
+    ?>
 
 
 
@@ -288,7 +140,6 @@ include 'includes/head.php';
 
   <?php
   include 'includes/footer.php';
-  // include 'includes/modals/add_employee.php'
   ?>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -302,19 +153,330 @@ include 'includes/head.php';
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+
+
+  <!-- ADD ---------------------------------------------------------------------------------------------->
   <script>
     $(document).ready(function() {
-      console.log("jQuery version: " + $.fn.jquery);
-      $('#add_employee_button').click(function() {
-        $('#addEmployeeModal').modal('show');
+      function fetchProductList() {
+        $.ajax({
+          url: "php/fetch_products.php",
+          type: "GET",
+          success: function(response) {
+            $('tbody').empty();
+            $('tbody').append(response);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.error("AJAX Error:", textStatus, errorThrown);
+            console.log("Response Text:", jqXHR.responseText);
+          },
+        });
+      }
 
-        console.log("Button is clicked");
+      fetchProductList();
+
+      $('#add_employee_button').click(function() {
+        $('#addProductModal').modal('show');
+      });
+
+      $('#image').change(function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+          $('#imagePreview').css('background-image', 'url(' + reader.result + ')');
+          $('#imagePreview').text('');
+        };
+        if (event.target.files.length) {
+          reader.readAsDataURL(event.target.files[0]);
+        } else {
+          $('#imagePreview').css('background-image', '');
+          $('#imagePreview').text('Image Preview');
+        }
+      });
+
+      $('#submitProduct').click(function() {
+        var productName = $('#product_name').val().trim();
+        var productDescription = $('#product_description').val().trim();
+        var price = $('#price').val().trim();
+        var image = $('#image')[0].files[0];
+
+        if (!productName || !productDescription || !price || !image) {
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Please fill in all fields.",
+            showConfirmButton: true,
+          });
+          return;
+        }
+        var formData = new FormData();
+        formData.append('product_name', $('#product_name').val());
+        formData.append('product_description', $('#product_description').val());
+        formData.append('price', $('#price').val());
+        formData.append('uploaded_at', new Date().toISOString());
+        formData.append('image', $('#image')[0].files[0]);
+
+        console.log(formData);
+        $.ajax({
+          url: "php/add_product.php",
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            if (response.success) {
+              // Fetch the updated product list
+              fetchProductList();
+
+              $("#addProductModal").modal("hide");
+              $("#success-notification").html(response.message);
+              $("#success-notification").show().delay(10000).fadeOut();
+
+              Swal.fire({
+                icon: "success",
+                title: "Product Added Successfully!",
+                text: response.message,
+                timer: 5000,
+                showConfirmButton: true,
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Error: " + response.message,
+                showConfirmButton: true,
+              });
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            var errorMessage = jqXHR.responseText;
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "Error: " + errorMessage,
+              showConfirmButton: true,
+            });
+          },
+        });
+      });
+      $('#imagePreview').css('background-image', '');
+      $('#addProductModal').modal('hide');
+
+
+    });
+  </script>
+  <!-- END ADD ---------------------------------------------------------------------------------------------->
+
+
+
+
+  <!--  UPDATE ----------------------------------------------------------------------------------------------->->
+  <script>
+    $(document).on('click', '.edit-product-btn', function() {
+      console.log("Edit button clicked");
+      $('#editProductModal').modal('show');
+      var productId = $(this).data('id');
+
+      $.ajax({
+        url: 'php/get_product_details.php',
+        type: 'POST',
+        data: {
+          id: productId
+        },
+        dataType: 'json',
+        success: function(response) {
+          $('#edit_product_id').val(response.id);
+          $('#edit_product_name').val(response.product_name);
+          $('#edit_product_description').val(response.product_description);
+          $('#edit_price').val(response.price);
+          $('#editImagePreview').css('background-image', 'url("php/product_images/' + response.image_url + '")');
+        },
+        error: function(xhr, status, error) {
+          alert('Error fetching product data: ' + error);
+        }
+      });
+
+      $('#edit_image').change(function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+          $('#editImagePreview').css('background-image', 'url(' + reader.result + ')');
+          $('#editImagePreview').text('');
+        };
+        if (event.target.files.length) {
+          reader.readAsDataURL(event.target.files[0]);
+        } else {
+          $('#editImagePreview').css('background-image', '');
+          $('#editImagePreview').text('Image Preview');
+        }
       });
     });
   </script>
+
+  <script>
+    $(document).ready(function() {
+      function fetchProductList() {
+        $.ajax({
+          url: "php/fetch_products.php",
+          type: "GET",
+          success: function(response) {
+            $('tbody').empty();
+            $('tbody').append(response);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.error("AJAX Error:", textStatus, errorThrown);
+            console.log("Response Text:", jqXHR.responseText);
+          },
+        });
+      }
+
+      fetchProductList();
+
+      $('#submitEditProduct').click(function() {
+        var formData = new FormData($('#editProductForm')[0]);
+
+        $.ajax({
+          url: "php/update_product.php",
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            response = JSON.parse(response);
+
+            if (response.success) {
+              fetchProductList();
+
+              $("#editProductModal").modal("hide");
+              $("#success-notification").html(response.message);
+              $("#success-notification").show().delay(10000).fadeOut();
+
+              Swal.fire({
+                icon: "success",
+                title: "Product Updated Successfully!",
+                text: response.message,
+                timer: 5000,
+                showConfirmButton: true,
+              });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: response.message,
+                showConfirmButton: true,
+              });
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            var errorMessage = jqXHR.responseText;
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "Error: " + errorMessage,
+              showConfirmButton: true,
+            });
+          },
+        });
+      });
+    });
+  </script>
+  <!-- Update END ---------------------------------------------------------------------------------------------->
+
+  <!-- Delete -->
+  <script>
+    $(document).on('click', '.delete-product-btn', function() {
+      function fetchProductList() {
+        $.ajax({
+          url: "php/fetch_products.php",
+          type: "GET",
+          success: function(response) {
+            $('tbody').empty();
+            $('tbody').append(response);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.error("AJAX Error:", textStatus, errorThrown);
+            console.log("Response Text:", jqXHR.responseText);
+          },
+        });
+      }
+
+      var productId = $(this).data('id');
+
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url: 'php/delete_product.php',
+            type: 'POST',
+            data: {
+              id: productId
+            },
+            success: function(response) {
+              response = JSON.parse(response);
+
+              if (response.success) {
+                fetchProductList();
+                Swal.fire(
+                  'Deleted!',
+                  response.message,
+                  'success'
+                );
+              } else {
+                Swal.fire(
+                  'Error!',
+                  response.message,
+                  'error'
+                );
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              var errorMessage = jqXHR.responseText;
+              Swal.fire(
+                'Error!',
+                'Error: ' + errorMessage,
+                'error'
+              );
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+
+
+  <!-- RESET FORMS---------------------------------------------------------------------------------------------->
+  <script>
+    $(document).ready(function() {
+      $('#addProductModal').on('show.bs.modal', function(e) {
+        $('#addProductForm')[0].reset();
+        $('#editProductForm')[0].reset();
+        $('#imagePreview').css('background-image', '');
+        $('#imagePreview').text('Image Preview');
+        $('#image').val('');
+
+      });
+    });
+  </script>
+
+
+
+
+
+
+
 
 </body>
 
