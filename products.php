@@ -9,9 +9,12 @@ include 'php/db_init.php';
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
   <?php
   include 'includes/header.php';
@@ -67,7 +70,7 @@ include 'php/db_init.php';
           <div class="card-body pb-0">
             <h5 class="card-title">PRODUCTS<span>| List of Products</span></h5>
 
-            <table class="table table-borderless">
+            <table class="table table-borderless ">
               <thead>
                 <tr>
                   <th scope="col">Preview</th>
@@ -126,7 +129,6 @@ include 'php/db_init.php';
     </section>
 
     <?php
-    include 'includes/footer.php';
     include 'includes/modals/add_product.php';
     include 'includes/modals/edit_product.php';
     ?>
@@ -468,6 +470,13 @@ include 'php/db_init.php';
         $('#image').val('');
 
       });
+    });
+  </script>
+
+  <!-- Initialize DataTable -->
+  <script>
+    $(document).ready(function() {
+      $('#productTable').DataTable();
     });
   </script>
 
